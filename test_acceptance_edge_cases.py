@@ -2,7 +2,6 @@
 
 from io import BytesIO
 import pytest
-from threading import Thread
 
 # Helper function for concurrent image uploads
 def upload_image(client, img_data):
@@ -34,7 +33,7 @@ def test_edge_case_large_image_upload(client):
     )
 
     # Assert that the system can process large image files
-    assert b"Prediction" in response.data  # Adjust based on actual prediction content
+    assert b"Prediction" in response.data
 
 # 2. Edge Case: Uploading an Image with Missing or Incorrect Metadata
 def test_edge_case_invalid_metadata(client):
@@ -53,7 +52,7 @@ def test_edge_case_invalid_metadata(client):
     )
 
     # Assert that the system processes the image even without metadata
-    assert b"Prediction" in response.data  # Adjust based on actual behavior
+    assert b"Prediction" in response.data
 
 # 3. Edge Case: Uploading an Image with Non-Standard File Extensions
 def test_edge_case_non_standard_image_extensions(client):
@@ -72,7 +71,7 @@ def test_edge_case_non_standard_image_extensions(client):
     )
 
     # Ensure the system processes the file despite the non-standard extension
-    assert b"Prediction" in response.data  # Adjust based on actual prediction content
+    assert b"Prediction" in response.data
 
 # 4. Edge Case: Uploading a Sequence of Images for Multi-Step Processing
 def test_edge_case_sequential_image_uploads(client):

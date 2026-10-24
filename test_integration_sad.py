@@ -1,8 +1,5 @@
 # test_integration_sad.py
 
-import pytest
-from io import BytesIO
-
 def test_missing_file(client):
     """Test the prediction route with a missing file."""
     response = client.post("/prediction", data={}, content_type="multipart/form-data")

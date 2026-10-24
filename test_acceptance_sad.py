@@ -1,7 +1,5 @@
 # test_acceptance_sad.py
 
-import pytest
-
 def test_acceptance_missing_file(client):
     """
     Test Case: No File Uploaded
